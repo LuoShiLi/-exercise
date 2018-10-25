@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*全局的标题*/
+.line-left,.line-right{
+    float: left;
+    width: 496px;
+    height: 3px;
+    background:#ABCC47;
+    margin-top: 93px;
+}
+.line-left{
+    margin-left: 365px;
+}
+.font{
+    float: left;
+    width:153px;
+    height:31px;
+    font-size:30px;
+    font-weight:bold;
+    color: #333333;
+    line-height:11px;
+    margin: 85px 26px 18px 26px;
+}
+h3{
+    width:240px;
+    height:27px;
+    font-size:30px;
+    line-height:11px;
+    font-weight: normal;
+    margin-left: 855px;
+    color: #ABCC47;
+}
+/*middle和foot的标题线背景及其h3字体的颜色*/
+.m-child1 .line-left,.foot-child1 .line-left{
+    background: #FFFFFF;
+}
+.m-child1 .line-right,.foot-child1 .line-right{
+    background:#FFFFFF;
+    margin-right: 320px;
+}
+.m-child1 h3,.foot-child1 h3{
+    color:white ;
+}
+
+/*主体的尺寸及背景*/
+.middle-bottom,.middle,.middle-top,.foot{
+    height: 900px;
+    width: 1920px;
+    position: relative;
+    background: #97B658;
+}
+.middle-bottom,.middle-top{
+    background: #FFFFFF;
+}
+
+/*导航栏*/
+.nav{
+    width: 1920px;
+    height: 62px;
+    background: #000000 ;
+    position: fixed ;
+    z-index:1;
+    top: 0;
+    padding:20px 10px 18px 420px;
+    background: rgba(0,0,0,0.2);
+    box-sizing: border-box;
+}
+.nav a{
+    text-decoration: none;
+    color: white;
+    margin: 20px;
+}
+
+/*主体内容居中显示*/
+.main{
+    width: 1920px;
+    margin: 0 auto;
+}
+
+/*middle-top多肉的家族*/
+.middle-top {
+    height:1250px ;
+}
+/*图片*/
+.mt-child2 img,.mt-child3 img,.mt-child4 img {
+    position: absolute;
+    width: 354px;
+    height: 343px;
+}
+.mt-child2 img{
+    left: 380px;
+    top: 120px;
+}
+.mt-child3 img{
+    right: 377px;
+    top: 486px;
+}
+.mt-child4 img{
+    left: 380px;
+    bottom: 80px;
+}
+/*文字*/
+.middle-top span{
+    position: absolute;
+    width: 648px;
+    font-size:24px ;
+}
+.mt-child2 span{
+    left: 848px;
+    top: 214px;
+    height: 160px;
+}
+.mt-child3 span{
+    left: 364px;
+    top: 560px;
+    height: 202px;
+}
+.mt-child4 span{
+    right: 418px;
+    bottom: 127px;
+    height: 202px;
+}
+
+
+/*middle多肉的相册*/
+.m-child2{
+    position: absolute;
+    left: 360px ;
+    top:200px;
+    width: 1210px;
+    height: 600px;
+}
+/*绝对定位*/
+.m-left,.m-middle,.m-right{
+    position: absolute;
+}
+
+.m-left{
+    width: 500px;
+    top: 0;
+    left: 0;
+}
+.m-left-bottom{
+    display: flex;
+}
+.left img{
+    display: block
+}
+.left>img{
+    width: 222px;
+    margin-top: 7px;
+    margin-bottom: 11px;
+}
+.m-left-bottom>img{
+    margin:8px 12px 8px 12px ;
+    width: 214px;
+    height: 335px;
+}
+
+
+
+.m-middle{
+    left: 462px;
+    top: 0;
+}
+/*图片转为块级元素显示*/
+.m-middle img,.m-right img{
+    display: block;
+}
+.m-middle img+img{
+    width: 319px;
+    height: 177px;
+    margin-top: 10px;
+}
+
+.m-right{
+    right: 0;
+}
+
+
+/*middle-bottom多肉的观赏*/
+.mb-child2{
+    height:650px;
+    position: absolute;
+    left: 361px;
+    top: 216px;
+}
+.mb-top{
+    margin-bottom: 109px;
+}
+.mb-top img,.mb-bottom img{
+    border-radius: 50%;
+    margin-right: 108px;
+    width: 205px;
+    height: 205px;
+}
+.middle-bottom span,.foot span{
+    float: left;
+    width: 266px;
+    height: 39px;
+    font-size:14px;
+    line-height: 30px;
+    margin-right: 44px;
+}
+
+/*foot多肉的价值*/
+.foot-child2{
+    height:650px;
+    position: absolute;
+    left: 359px;
+    top: 200px;
+}
+.foot-top{
+    margin-bottom: 169px;
+}
+.foot-top img,.foot-bottom img{
+    margin-right: 44px;
+    width: 268px;
+    height: 170px;
+}
+.foot span{
+    margin-right: 50px;
+    color: #FFFFFF;
+}
+
+/*版权*/
+.copyright{
+    height: 78px;
+    width: 1920px;
+    background: white;
+    font-size: 14px;
+    margin-left: 695px;
+    margin-top: 43px
+}
