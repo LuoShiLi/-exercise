@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="js/jquery-1.4.2.min.js"></script>
+	<script>
+		$(function(){
+			$(".yonghu").html("*").css("color","red");
+			
+			$("#username").focus(function(){
+			$(this).next("img").remove();//删除重复显示的图片
+			var $p=$("<img src='img/onFocus.gif' />");
+			$("#span-username").before($p);
+			$("#span-username").html("用户名必须是6-12个字符！");
+			});
+		var name=/^\w{6,12}$/;//定义用户名格式
+		$("#username").blur(function(){
+			var usename=$("#username").val();//获取输入的用户名
+			if(usename==null||usename==""){
+			$(this).next("img").remove();
+			var $p=$("<img src='img/onError.gif' />");
+			$("#span-username").before($p);
+			$("#span-username").html("用户名不能为空!");
+			}
+			else if(!name.test(usename)){ 
+			$(this).next("img").remove();
+			var $p=$("<img src='img/onError.gif' />");
+			$("#span-username").before($p);
+			$("#span-username").html("用户名不符合规则!");	
+			}
+			else if(name.test(usename)){
+			$(this).next("img").remove();
+			var $p=$("<img src='img/onCorrect.gif' />");
+			$("#span-username").before($p);
+			$("#span-username").html("用户名符合规则!").css("color","green");	
+			}
+		});
+		
+		
+		$("#mima").focus(function(){
+			$(this).next("img").remove();
+			var $t=$("<img src='img/onFocus.gif' />")
+			$("#span-mima").before($t);
+			$("#span-mima").html("密码必须是6-12位字符！").css("color","red");
+		});
+	var ma=/^\w{6,12}$/;	//定义密码格式
+		$("#mima").blur(function(){
+			var m=$("#mima").val();//获取输入的密码
+			if(m==null||m==""){
+			$(this).next("img").remove();
+			var $t=$("<img src='img/onError.gif' />")
+			$("#span-mima").before($t);
+			$("#span-mima").html("密码不能为空！").css("color","red");
+			}
+			else if(!ma.test(m)){
+			$(this).next("img").remove();
+			var $t=$("<img src='img/onError.gif' />")
+			$("#span-mima").before($t);
+			$("#span-mima").html("密码不符合规则！").css("color","red");
+			}
+			else if(ma.test(m)){
+			$(this).next("img").remove();
+			var $t=$("<img src='img/onCorrect.gif' />")
+			$("#span-mima").before($t);
+			$("#span-mima").html("密码符合规则！").css("color","green");
+			}
+		});
+		
+		
+		$("#chongfu").focus(function(){
+			$(this).next("img").remove();
+			var $tu=$("<img src='img/onFocus.gif' />");
+			$("#span-chongfu").before($tu);
+			$("#span-chongfu").html("两次密码必须一致！！").css("color","red");
+		});
+		$("#chongfu").blur(function(){
+			var ch=$("#chongfu").val();//获取重复输入的密码
+			if(ch==null||ch==""){
+			$(this).next("img").remove();
+			var $tu=$("<img src='img/onError.gif' />");
+			$("#span-chongfu").before($tu);
+			$("#span-chongfu").html("重复密码不能为空！！").css("color","red");
+			}
+			else{
+				var m=$("#mima").val();//得到第一次输入的密码
+				if(m!=ch){
+				$(this).next("img").remove();
+				var $tu=$("<img src='img/onError.gif' />");
+				$("#span-chongfu").before($tu);
+				$("#span-chongfu").html("两次密码不一致！！").css("color","red");
+				}
+				else{
+					$(this).next("img").remove();
+					var $tu=$("<img src='img/onCorrect.gif' />");
+					$("#span-chongfu").before($tu);
+					$("#span-chongfu").html("两次密码一致！！").css("color","green");
+				}
+			}	
+		});
+		
+		
+		$("#emali").focus(function(){
+			$(this).next("img").remove();
+			var  $tup=$("<img src='img/onFocus.gif' />");
+			$("#span-emali").before($tup);
+			$("#span-emali").html("邮箱中必须包含@符号和.号，@符号必须在.号前面！！").css("color","red");
+		});
+		var em=/^[a-zA-Z0-9]+@([a-zA-Z0-9]+\.)+(com||COM|cn||CN|net||NET|org||ORG)$/;//定义邮箱格式
+		$("#emali").blur(function(){
+			var  E=$("#emali").val();
+			if(E==null||E==""){
+			$(this).next("img").remove();
+			var  $tup=$("<img src='img/onError.gif'/>");
+			$("#span-emali").before($tup);
+			$("#span-emali").html("邮箱不能为空！！").css("color","red");
+			}
+			else if(!em.test(E)){
+			$(this).next("img").remove();
+			var  $tup=$("<img src='img/onError.gif'/>");
+			$("#span-emali").before($tup);
+			$("#span-emali").html("邮箱格式不正确！！").css("color","red");
+			}
+			else if(em.test(E)){
+			$(this).next("img").remove();
+			var  $tup=$("<img src='img/onCorrect.gif'/>");
+			$("#span-emali").before($tup);
+			$("#span-emali").html("邮箱格式正确！！").css("color","green");
+			}
+		});
+		
+		
+	});			
+	</script>
+	<form method="post" action="register">
+	<body >
+		<table border="1" width="500px" height="100px" cellpadding="0"cellspacing="0"align="center">
+			<tr>
+				<td colspan="2" align="center" style="background-color: lightblue;">新用户注册</td>
+			</tr>
+		<tr>
+			<td align="center"> 用&nbsp;&nbsp;户&nbsp; 名
+			<font color="red" style="font-size:9px;">(必填)</font>： </td> 
+			<td style="width: 300px;"><input type="text" id="username" />
+		<span id="span-username" class="yonghu"style="font-size: 9px;"></span><br /></td>
+		</tr>
+		<tr>
+			<td align="center">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码
+			<font color="red"style="font-size:9px;">(必填)</font>：</td> 
+			<td><input type="password" id="mima" />
+		<span id="span-mima" class="yonghu " style="font-size: 9px;"></span><br /></td> 
+		</tr>
+		<tr>
+			<td align="center">重复密码
+			<font color="red"style="font-size:9px;">(必填)</font>：</td>
+			<td><input type="password" id="chongfu" />
+		<span id="span-chongfu" class="yonghu"style="font-size: 9px;"></span><br /></td>
+		</tr>
+		
+		<tr>
+			<td align="center">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱
+			<font color="red"style="font-size:9px;">(必填)</font>：</td>
+			<td ><input  type="email" id="emali"  />
+		<span id="span-emali" class="yonghu"style="font-size: 9px;"></span><br /><br/></td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="submit"  id="submit" style="width: 70px;height: 25px;"/>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="reset"  style="width: 70px;height: 25px;" /></td>
+		</tr>
+		</table>
+	</body
+	</form>
+</html>
